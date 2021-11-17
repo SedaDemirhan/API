@@ -45,6 +45,12 @@ public class GetRequest11TestData extends jsonPlaceHolderTestBase {
         Assert.assertEquals(expectedData.get("completed"),jsonPath.getBoolean("completed"));
 
 //3.yöntem deserialization
-        //---object mapper
-        //---pojo class
+
+        HashMap<String,Object>actualData=response.as(HashMap.class);
+        System.out.println(actualData);
+
+        Assert.assertEquals(expectedData.get("userId"),actualData.get("userId"));
+        Assert.assertEquals(expectedData.get("title"),actualData.get("title"));
+        Assert.assertEquals(expectedData.get("completed"),actualData.get("completed"));
+
 }}
