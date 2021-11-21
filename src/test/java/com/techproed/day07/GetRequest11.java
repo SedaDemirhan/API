@@ -26,6 +26,11 @@ public class GetRequest11 extends jsonPlaceHolderTestBase {
     public void test(){
     spec01.pathParams("parametre1","todos",
             "parametre2",2);
+
+    //expected data test datamız.Bizim test datalarımız key ve value şeklinde olduğu için hash map kullnaıyoruz
+    //Hash map değer atamak için de put ile key ve value değerleri ile giriyiruz(post man de urı girilerek kontrol ediyoruz)
+    //Assertion yaparken map kullanarak assertion yapıcaz.Syfamızı daha dinamik hale getirmek için bu işlemleri yapıyıruz
+
     HashMap<String,Object>expectedData=new HashMap<String,Object>();
 
     expectedData.put("statusCode",200);
@@ -42,8 +47,10 @@ public class GetRequest11 extends jsonPlaceHolderTestBase {
             spec(spec01).
             when().
             get("/{parametre1}/{parametre2}");
-//1.yöntem Matchers class ile assertion işlemi yaptık
+
+    //1.yöntem Matchers class ile assertion işlemi yaptık
     response.then().assertThat().statusCode((Integer)expectedData.get("statusCode")).
+            //expected datamızı obje olarak oluşturduğumuz için status code type casting yaparak ınteger çeviriyoruz
             headers("via", equalTo(expectedData.get("via")),
                     "Server",equalTo(expectedData.get("Server"))).
             body("userId",equalTo(expectedData.get("userId")),
@@ -51,6 +58,8 @@ public class GetRequest11 extends jsonPlaceHolderTestBase {
                     "completed",equalTo(expectedData.get("completed")));
 //2.yöntem
     JsonPath jsonPath=response.jsonPath();
+
+    //json path kullanarak header 'lara ulaşamyız o nedenle response kullanırız.json path sadece  body deki değerleri kapsar
     Assert.assertEquals(expectedData.get("statusCode"),response.statusCode());
     Assert.assertEquals(expectedData.get("via"),response.getHeader("via"));
     Assert.assertEquals(expectedData.get("Server"),response.getHeader("Server"));

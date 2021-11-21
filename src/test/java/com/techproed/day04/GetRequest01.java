@@ -18,7 +18,7 @@ public class GetRequest01 {
     @Test
    public void test01() {
 
-        //1-Api testi yaparken ilk olarak url(endpoin)belirlenmeli
+        //1-Api testi yaparken ilk olarak url(endpoint)belirlenmeli
         String url = "https://restful-booker.herokuapp.com/booking/3";
 
         //2-beklenen sonuç(expected result)oluşturulur

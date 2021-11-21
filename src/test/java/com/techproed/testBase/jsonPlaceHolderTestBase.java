@@ -7,7 +7,10 @@ import org.junit.Before;
 
 public class jsonPlaceHolderTestBase {
 
-        protected RequestSpecification spec01;
+
+        protected RequestSpecification spec01;//spec tanımladım
+    //sadece child classların ulaşmasını istiyorum o nedenle  "protected " yapıyorum
+
         @Before
         public void setUp(){
             spec01= new RequestSpecBuilder().

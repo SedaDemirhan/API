@@ -30,6 +30,13 @@ public class GetRequest05 {
                     "data.employee_name",hasItem("Ashton Cox"),
                     "data.employee_age" ,hasItems(21,61,23));
 
+    //body("data.id", Matchers.hasSize(" value ")) : key olarak verilen degisken’in sayisinin value’ya
+    // esit olup olmadigini kontrol eder.
+
+    //body("data.employee_name",Matchers.hasItem(" value ")) : key olarak verilen degisken’in aldigi
+    // degerlerin icinde value var midiye kontrol eder.
+    // Value birden fazla ise hasItems kullanip value’lari vigulle yanyana yazilabilir
+
 
 
 }

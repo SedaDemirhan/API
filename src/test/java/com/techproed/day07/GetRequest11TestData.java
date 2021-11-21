@@ -45,12 +45,28 @@ public class GetRequest11TestData extends jsonPlaceHolderTestBase {
         Assert.assertEquals(expectedData.get("completed"),jsonPath.getBoolean("completed"));
 
 //3.yöntem deserialization
+        //json formatındaki objeleri java objelerine dönüştürmeye de-serialization diyoruz.Bunun tam tersi ise serialization'dır
+        //Aynı zamanda API'dan gelen verilerin assert etme yöntemidir
 
-        HashMap<String,Object>actualData=response.as(HashMap.class);
+        //ASSERTİON İŞLEMİ İÇİN;
+        //1-Matcher Class
+        //2-JSON path
+        //3- Deserilization kullanıyoruz---->bu işlem için 2 tane maven'dan kütüphane ekliyoruz.
+
+        //Desrilization işlemi 2 şekilde yapılıyor
+        //1-->Object Mapper Yöntemi
+        //3-->Pojo Class ile birlikte
+
+
+
+        HashMap<String,Object>actualData=response.as(HashMap.class);//bu satır ile deserilization işlemi yaptık eklediğimiz kütüphaneler ile
+        //Response 'dan gelen datayı Map gibi al ve bunu actual dataya ata
         System.out.println(actualData);
 
         Assert.assertEquals(expectedData.get("userId"),actualData.get("userId"));
         Assert.assertEquals(expectedData.get("title"),actualData.get("title"));
         Assert.assertEquals(expectedData.get("completed"),actualData.get("completed"));
+
+        //!!!deserilization da header ve status code Map içerisine gelmiyor.Map içerisine gelen kısım BODY kısmı oluyor
 
 }}

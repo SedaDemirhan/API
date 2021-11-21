@@ -64,5 +64,6 @@ ve Response body'sinin "API" icermedigini test edin
         Assert.assertTrue(response.asString().contains("Not Found"));
         Assert.assertFalse(response.asString().contains("API"));
         // asString metodu ile json formatında gelen response u Stringe çevirdik
-    }}
+    }
+}
 

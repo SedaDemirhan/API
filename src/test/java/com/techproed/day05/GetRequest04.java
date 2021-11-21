@@ -34,6 +34,8 @@ public class GetRequest04 {
                         "bookingdates.checkin",equalTo("2020-04-10"));
 
 
+
+
     }
 
 }
