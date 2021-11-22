@@ -24,12 +24,14 @@ public class DummyTestData {
         yaslar.add(40);
         yaslar.add(21);
         yaslar.add(19);
+
         HashMap<String,Object> onbirinci=new HashMap<String, Object>();
         onbirinci.put("id",11);
         onbirinci.put("employee_name","Jena Gaines");
         onbirinci.put("employee_salary",90560);
         onbirinci.put("employee_age",30);
         onbirinci.put("profile_image","");
+
         HashMap<String,Object> expectedData=new HashMap<String, Object>();
         expectedData.put("statusCode",200);
         expectedData.put("besincicalisan","Airi Satou");
@@ -39,4 +41,26 @@ public class DummyTestData {
         expectedData.put("onbirincicalisan",onbirinci);
         return expectedData;
     }
+
+    //http://dummy.restapiexample.com/api/v1/employees url ine bir istek gönderildiğinde
+    //Status kodun 200 olduğunu,
+    //En yüksek maaşın 725000 olduğunu,
+    //En küçük yaşın 19 olduğunu,
+    //İkinci en yüksek maaşın 675000
+    //olduğunu test edin.
+
+
+    public HashMap<String,Integer> setupTestData02(){
+
+        HashMap<String ,Integer>expectedData=new HashMap<String,Integer>();
+        expectedData.put("statusCode",200);
+        expectedData.put("enYuksekMaas",725000);
+        expectedData.put("enKucukYas",19);
+        expectedData.put("ikinciYuksekMaas",675000);
+        return expectedData;
+
+
+    }
+
+
 }

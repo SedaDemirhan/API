@@ -35,19 +35,21 @@ public class GetRequest13 extends DummyTestBase {
     @Test
     public void test(){
         spec03.pathParam("parametre1","employees");
+
         DummyTestData expectedObje=new DummyTestData();
         HashMap<String,Object> expectedDataMap=expectedObje.setUpTestData();
         System.out.println(expectedDataMap);
+
         Response response= given().
                 accept("application/json").
                 spec(spec03).
                 when().
                 get("/{parametre1}");
-        // response.prettyPrint();
+     response.prettyPrint();
 
         //De Serialization işlemi
         HashMap<String,Object> actualDataMap=response.as(HashMap.class);
-        System.out.println(actualDataMap);
+        System.out.println(actualDataMap);//actual datayı map şeklinde oluşturduk
 
         //Status kodun 200 olduğunu,
         Assert.assertEquals(expectedDataMap.get("statusCode"),response.getStatusCode());

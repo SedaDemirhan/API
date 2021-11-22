@@ -2,6 +2,7 @@ package com.techproed.day08;
 
 import com.techproed.testBase.HerokuAppTestBase;
 import com.techproed.testData.HerokuappTestData;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
@@ -53,6 +54,14 @@ public class GetRequest12 extends HerokuAppTestBase {
         Assert.assertEquals(((Map) expectedDataMap.get("bookingdates")).get("checkout"),
                 ((Map) actualDataMap.get("bookingdates")).get("checkout")  );
 
+        JsonPath jsonPath=response.jsonPath();
+
+        Assert.assertEquals(expectedDataMap.get("firstname"),jsonPath.getString("firstname"));
+        Assert.assertEquals(expectedDataMap.get("lastname"),jsonPath.getString("lastname"));
+        Assert.assertEquals(expectedDataMap.get("totalprice"),jsonPath.getInt("totalprice"));
+        Assert.assertEquals(expectedDataMap.get("depositpaid"),jsonPath.getBoolean("depositpaid"));
+        Assert.assertEquals(((Map)expectedDataMap.get("bookingdates")).get("checkin"),jsonPath.getString("bookingdates.checkin"));
+        Assert.assertEquals(((Map)expectedDataMap.get("bookingdates")).get("checkout"),jsonPath.getString("bookingdates.checkout"));
 
     }
 
