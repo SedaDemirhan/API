@@ -39,5 +39,24 @@ public JSONObject setUpPutData(){
     expectedRequest.put("title","Wash the dishes ");
     expectedRequest.put("completed",false);
     return expectedRequest;
+
 }
+
+public JSONObject setUpPatchRequestData(){
+
+    JSONObject requestData=new JSONObject();
+    requestData.put("title","API calismaliyim");
+    return requestData;
+
+}
+public JSONObject setUpPatchExpectedData(){
+    JSONObject expectedData=new JSONObject();
+    expectedData.put("userId",10);
+    expectedData.put("title","API calismaliyim");
+    expectedData.put("completed",true);
+    expectedData.put("id",198);
+
+    return expectedData;
+}
+
 }
