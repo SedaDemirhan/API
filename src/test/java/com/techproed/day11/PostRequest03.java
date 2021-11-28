@@ -1,6 +1,6 @@
 package com.techproed.day11;
 
-import com.techproed.testBase.jsonPlaceHolderTestBase;
+import com.techproed.testBase.JsonPlaceHolderTestBase;
 import com.techproed.testData.JsonPlaceHolderTestData;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
@@ -14,7 +14,7 @@ import java.util.HashMap;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.core.IsEqual.equalTo;
 
-public class PostRequest03 extends jsonPlaceHolderTestBase {
+public class PostRequest03 extends JsonPlaceHolderTestBase {
     //https://jsonplaceholder.typicode.com/todos URL ine aşağıdaki body gönderildiğinde,
     //     }
     //     "userId": 55,

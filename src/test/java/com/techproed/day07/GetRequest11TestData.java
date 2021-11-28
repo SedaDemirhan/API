@@ -1,6 +1,6 @@
 package com.techproed.day07;
 
-import com.techproed.testBase.jsonPlaceHolderTestBase;
+import com.techproed.testBase.JsonPlaceHolderTestBase;
 import com.techproed.testData.JsonPlaceHolderTestData;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -12,7 +12,7 @@ import java.util.HashMap;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 
-public class GetRequest11TestData extends jsonPlaceHolderTestBase {
+public class GetRequest11TestData extends JsonPlaceHolderTestBase {
     @Test
     public void test(){
         spec01.pathParams("parametre1","todos",

@@ -5,7 +5,7 @@ import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
 
 
-public class jsonPlaceHolderTestBase {
+public class JsonPlaceHolderTestBase {
 
 
         protected RequestSpecification spec01;//spec tanımladım

@@ -1,6 +1,6 @@
 package com.techproed.day11;
 
-import com.techproed.testBase.jsonPlaceHolderTestBase;
+import com.techproed.testBase.JsonPlaceHolderTestBase;
 import com.techproed.testData.JsonPlaceHolderTestData;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
@@ -9,11 +9,9 @@ import org.json.JSONObject;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.HashMap;
-
 import static io.restassured.RestAssured.given;
 
-public class PutRequest01 extends jsonPlaceHolderTestBase {
+public class PutRequest01 extends JsonPlaceHolderTestBase {
 
     //https://jsonplaceholder.typicode.com/todos/198 URL ine aşağıdaki body gönerdiğimde
     //   {
