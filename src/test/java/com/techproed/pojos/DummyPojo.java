@@ -1,18 +1,15 @@
 package com.techproed.pojos;
 
 public class DummyPojo {
-
     private String status;
     private Data data;
     private String message;
-
     /**
      * No args constructor for use in serialization
      *
      */
     public DummyPojo() {
     }
-
     /**
      *
      * @param data
@@ -25,31 +22,24 @@ public class DummyPojo {
         this.data = data;
         this.message = message;
     }
-
     public String getStatus() {
         return status;
     }
-
     public void setStatus(String status) {
         this.status = status;
     }
-
     public Data getData() {
         return data;
     }
-
     public void setData(Data data) {
         this.data = data;
     }
-
     public String getMessage() {
         return message;
     }
-
     public void setMessage(String message) {
         this.message = message;
     }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
